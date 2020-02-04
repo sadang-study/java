@@ -1,7 +1,7 @@
 ### 1. 사당 스터디 킥오프 (2/4)
 #### 개요
 * 날짜 : 2월 4일 (화) 19:00
-* 장소 : [셀스 사당점](https://sd.sels.co.kr/)
+* 장소 : [셀스 사당점](https://sd.sels.co.kr/) 
 
 #### 과제
 * 스터디의 각 인원은 *사당-스터디*에서 무엇을 진행할지에 대한 간단한 문서를 작성해서 본 저장소의 [what-to-do](https://github.com/sadang-study/java/tree/master/what-to-do) 폴더에 올려주시기 바랍니다.
