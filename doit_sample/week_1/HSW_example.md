@@ -1,5 +1,5 @@
 ## 문제) 8X8로 이루어진 빙고가 존재합니다.
-![ex_screenshot](/array_image1.png)
+![ex_screenshot](java/doit_sample/week_1/array_Image1.PNG)
 
 
 * 1) 빙고를 array_Image1과 같도록 우로 1회 회전시키시오.
