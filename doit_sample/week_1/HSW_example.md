@@ -3,7 +3,7 @@
 
 
 * 1) 빙고를 array_Image1과 같도록 우로 1회 회전시키시오.
-![ex_screenshot](array_image2.PNG)
+![ex_screenshot](array_Image2.PNG)
 
 
 
@@ -14,7 +14,7 @@
     
       출력할 답 : 찾은 단어 리스트는 : 1.CAR 2.MILK 3.RUN 4.STUDY 5.WEB 입니다. 
       
-      ![ex_screenshot](array_image3.PNG)
+      ![ex_screenshot](array_Image3.PNG)
 
 
 ## 답안
