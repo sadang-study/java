@@ -1,9 +1,9 @@
 ## 문제) 8X8로 이루어진 빙고가 존재합니다.
-![ex_screenshot](./img/array_image1.png)
+![ex_screenshot](./java/doti_sample/week_1/array_image1.png)
 
 
 * 1) 빙고를 array_Image1과 같도록 우로 1회 회전시키시오.
-![ex_screenshot](./img/array_image2.png)
+![ex_screenshot](./java/doti_sample/week_1/array_image2.png)
 
 
 
@@ -14,7 +14,7 @@
     
       출력할 답 : 찾은 단어 리스트는 : 1.CAR 2.MILK 3.RUN 4.STUDY 5.WEB 입니다. 
       
-      ![ex_screenshot](./img/array_image3.png)
+      ![ex_screenshot](./java/doti_sample/week_1/array_image3.png)
 
 
 ## 답안
