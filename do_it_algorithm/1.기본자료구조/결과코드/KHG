@@ -1,4 +1,7 @@
 ```java
+
+class Solution {
+
     // 숫자 역순 회전
     public int[] solution(long n) {
         int[] answer = new int[(int) (Math.log10(n) + 1)];
@@ -53,6 +56,6 @@
         return answer;
     }
     
-    
+}
     
 ```
