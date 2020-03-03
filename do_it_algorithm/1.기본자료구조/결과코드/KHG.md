@@ -4,7 +4,14 @@
 
 public class Solution {
 
-    // 숫자 역순 회전
+    /**
+     * 숫자 역순
+     *
+     * @since 2020. 3. 3.
+     * @author 김형기
+     *
+     * @return
+     */
     public int[] solution(long n) {
         int[] answer = new int[(int) (Math.log10(n) + 1)];
         
@@ -13,11 +20,20 @@ public class Solution {
             answer[i++] = (int) (n % 10);
             n /= 10;
         }
+        
         return answer;
     }
     
     
-    // 회전 문제 
+     
+    /**
+     * 회전 문제
+     *
+     * @since 2020. 3. 3.
+     * @author 김형기
+     *
+     * @return
+     */
     public int[][] turnArr(int[][] arr, int n) {
         int[][] answer = new int[arr.length][arr[0].length];
         
@@ -47,7 +63,14 @@ public class Solution {
         return answer;
     }
     
-    // 직사각형 꼭지점 구하기
+    /**
+     * 직사각형 꼭지점 구하기
+     *
+     * @since 2020. 3. 3.
+     * @author 김형기
+     *
+     * @return
+     */
     public int[] rectangle (int[][] v) {
         int[] answer = new int[2];
         
