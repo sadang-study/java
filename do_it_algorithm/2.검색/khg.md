@@ -22,9 +22,9 @@
 
 <strong>입출력 예</strong>
 
- |n|times|return|
- |---|:---:|
- |6|[7,10]|28|
+ n|times|return
+ ----|----|----
+ 6|[7,10]|28
  
  <strong>입출력 예 설명</strong>
  <ul>
