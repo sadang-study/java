@@ -1,6 +1,6 @@
 ```java
 
-class Solution {
+public class Solution {
 
     // 숫자 역순 회전
     public int[] solution(long n) {
