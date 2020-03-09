@@ -1,4 +1,4 @@
-## Search_exam_HSW.md 작성코드
+### Search_exam_HSW.md 작성코드
 
 ```java
 package main;
@@ -56,10 +56,10 @@ public class MainClass {
 
 ```
 
-## khg.md 작성코드
+### khg.md 작성코드
 ```java
 ```
 
-## PBH_나무자르기.md 작성코드
+### PBH_나무자르기.md 작성코드
 ```java
 ```
