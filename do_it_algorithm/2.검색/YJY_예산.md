@@ -20,8 +20,3 @@
 | budgets               | M | return |
 | -------               |:-:|-------|
 | *[120, 110, 140, 150]*  |  *485* | *127*  |
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
