@@ -56,10 +56,68 @@ public class MainClass {
 
 ```
 
+### PBH_나무자르기.md 작성코드
+```java
+public class 나무자르기{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("나무의 수 입력 : ");
+        int n = scan.nextInt();
+        int[] treeArr = new int[n];
+
+        for(int i = 0; i<treeArr.length; i++){
+            System.out.println("나무의 길이 입력"); //랜덤이라고 가정함.
+            treeArr[i] = scan.nextInt();
+        }
+
+        System.out.println("필요한 나무의 길이 입력 : ");
+        int m = scan.nextInt();
+        
+        int max = 0; //최대길이 
+        for(int i = 0; i<treeArr.length; i++){
+            if(max < treeArr[i]){
+                max = treeArr[i];
+            }
+        }
+        
+        treeSolution(max, treeArr, m);
+    }
+
+    /**
+     * 이진탐색 활용.
+     * @param max treeArr 배열의 최댓값,
+     * @param treeArr 나무 배열
+     * @param m 필요한 나무의 길이
+     */
+    public static void treeSolution(int max, int[] treeArr, int m){
+        int pl = 0; 
+        int pr = max;
+        int pc = (pl+pr)/2;
+
+        while(pc >= pl && pc <= pr){ // 종료조건1 
+            int sum = 0;
+            for(int i = 0; i<treeArr.length; i++){
+                if(pc < treeArr[i]){
+                    sum += treeArr[i] - pc;
+                }
+            }
+
+            if(sum < m ){
+                pc -= 1;
+            }else if(sum > m ) {
+                pc += 1;
+            }else if(sum == m){ //종료조건2 자른 나무의 길이의 합과 필요로 하는 나무의 길이가 같음.
+                System.out.println(pc);
+                break; 
+            }
+        }
+    }
+}
+
+```
+
 ### khg.md 작성코드
 ```java
 ```
 
-### PBH_나무자르기.md 작성코드
-```java
-```
+
