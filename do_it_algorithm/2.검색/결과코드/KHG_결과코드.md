@@ -113,3 +113,48 @@ public class Search_YJY {
 }
 
 ```
+
+```java
+
+/**
+ * 클래스명: <code>Search_HSW</code><br/><br/>
+ *
+ * 존재 하는 수 구하기
+ *
+ * @author 김형기
+ *
+ */
+public class Search_HSW {
+
+    public static void main(String[] args) {
+        int arr[] = {4 , 1, 5, 2, 3};
+        int m[] = {1, 3, 7, 9, 5};
+        
+        Arrays.sort(arr);
+        for (int x : m) {
+            System.out.println(binarySearch(arr, x));
+        }
+    }
+    
+    
+    public static int binarySearch(int[] arr, int key) {
+        int low = arr[0];
+        int high = arr[arr.length - 1];
+        
+        while(low <= high) {
+            int mid = (low + high) / 2;
+            
+            if (mid > key) {
+                high = mid - 1;
+            } else if (mid < key) {
+                low = mid + 1;
+            } else {
+                return 1;
+            }
+        }
+        
+        return 0;
+    }
+}
+
+```
