@@ -158,3 +158,67 @@ public class Search_HSW {
 }
 
 ```
+
+```java
+
+/**
+ * 클래스명: <code>Search_KHG</code><br/><br/>
+ *
+ * 입국심사 시간 구하기
+ *
+ * @author 김형기
+ *
+ */
+public class Search_KHG {
+
+    public static void main(String[] args) {
+        int n = 6;
+        int[] times = {7, 10, 2};
+        
+        
+        System.out.println(solution(n, times));
+    }
+    
+    public static long solution(int n, int[] times) {
+        Arrays.sort(times);
+        
+        long low = 0;
+        long high = (long)times[times.length - 1] * (long)n;
+        long answer = high;
+        
+        while(low <= high) {
+            long mid = (low + high) / 2;
+            long sum = 0;
+            
+            for(int x : times) {
+                sum += (mid / x);
+            }
+            
+            if (sum > n) {
+                high = mid - 1;
+                answer = answer > mid ? mid : answer; 
+            } else if (sum < n) {
+                low = mid + 1;
+            } else {
+                answer = mid;
+                
+                while(sum == n) {
+                    sum = 0;
+                    answer = mid;
+                    mid--;
+                    
+                    for(int x : times) {
+                        sum += (mid / x);
+                    }
+                }
+                
+                return answer;
+            }
+        }
+        
+        return answer;
+    }
+}
+
+
+```
