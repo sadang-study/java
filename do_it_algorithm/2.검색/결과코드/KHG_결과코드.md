@@ -199,9 +199,7 @@ public class Search_KHG {
                 answer = answer > mid ? mid : answer; 
             } else if (sum < n) {
                 low = mid + 1;
-            } else {
-                answer = mid;
-                
+            } else {                
                 while(sum == n) {
                     sum = 0;
                     answer = mid;
