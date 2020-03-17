@@ -116,6 +116,47 @@ public class 나무자르기{
 
 ```
 
+### yjy.md  예산심사 작성코드
+```java
+import java.util.Arrays;
+
+public class 예산심사 {
+    public static void main(String[] args) {
+        solution(new int[]{120, 110, 140, 150}, 485);
+    }
+
+    public static int solution(int[] arr, int M) {
+        int answer = 0;
+        Arrays.sort(arr);
+        int min = arr[0];
+        int max = arr[arr.length-1];
+        int mid = (min+max)/2;
+        int sum = 0;
+        
+        for(int i = 0; i<arr.length; i++) {
+            sum+=arr[i];
+        }
+
+        while(sum > M) {
+            sum = 0;
+            for(int i = 0; i<arr.length; i++) {
+                if(arr[i] > mid) {
+                    arr[i] = mid;
+                }
+                sum += arr[i];
+            }
+            if(sum > M) {
+                mid = mid-1;
+            }
+            System.out.println(Arrays.toString(arr));
+        }
+        System.out.println(mid);
+        return mid;
+    }
+}
+
+```
+
 ### khg.md 작성코드
 ```java
 ```
