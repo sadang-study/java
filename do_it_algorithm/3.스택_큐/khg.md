@@ -105,7 +105,7 @@ public int solution(int bridge_length, int weight, int[] truck_weights) {
     while(!progress.isEmpty()) {
         answer++;
 
-        progress.stream().forEach(i -> i[0] = ++i[0]);
+        progress.stream().forEach(i -> ++i[0]);
 
         while(!progress.isEmpty() && progress.peek()[0] > bridge_length) {
             bridgeWeight -= progress.poll()[1];
