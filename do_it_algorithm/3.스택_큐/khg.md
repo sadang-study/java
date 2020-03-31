@@ -91,14 +91,14 @@ public int[] solution(int[] heights) {
 ```java
 public int solution(int bridge_length, int weight, int[] truck_weights) {
     int answer = 1;
-    Queue<Integer[]> truck = new LinkedList<Integer[]>();
+    Queue<Integer[]> wait = new LinkedList<Integer[]>();
     Queue<Integer[]> progress = new LinkedList<Integer[]>();
 
     for (int i = 0; i < truck_weights.length; i ++ ) {
-        truck.offer(new Integer[] {1, truck_weights[i]});
+        wait.offer(new Integer[] {1, truck_weights[i]});
     }
 
-    Integer[] y = truck.poll();
+    Integer[] y = wait.poll();
     progress.offer(y);
 
     int sum = y[1];
@@ -111,8 +111,8 @@ public int solution(int bridge_length, int weight, int[] truck_weights) {
             sum -= progress.poll()[1];
         }
 
-        if (!truck.isEmpty() && sum + truck.peek()[1] <= weight) {
-            Integer[] x = truck.poll();
+        if (!wait.isEmpty() && sum + wait.peek()[1] <= weight) {
+            Integer[] x = wait.poll();
             progress.offer(x);
             sum += x[1];
         }
