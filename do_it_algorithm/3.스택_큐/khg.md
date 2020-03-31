@@ -98,23 +98,23 @@ public int solution(int bridge_length, int weight, int[] truck_weights) {
         wait.offer(new Integer[] {1, truck_weights[i]});
     }
 
-    Integer[] y = wait.poll();
-    progress.offer(y);
+    Integer[] x = wait.poll();
+    progress.offer(x);
 
-    int sum = y[1];
+    int bridgeWeight = x[1];
     while(!progress.isEmpty()) {
         answer++;
 
-        progress.stream().forEach(x -> x[0] = ++x[0]);
+        progress.stream().forEach(i -> i[0] = ++i[0]);
 
         while(!progress.isEmpty() && progress.peek()[0] > bridge_length) {
-            sum -= progress.poll()[1];
+            bridgeWeight -= progress.poll()[1];
         }
 
-        if (!wait.isEmpty() && sum + wait.peek()[1] <= weight) {
-            Integer[] x = wait.poll();
+        if (!wait.isEmpty() && bridgeWeight + wait.peek()[1] <= weight) {
+            x = wait.poll();
             progress.offer(x);
-            sum += x[1];
+            bridgeWeight += x[1];
         }
     }
 
