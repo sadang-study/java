@@ -85,3 +85,39 @@ public int[] solution(int[] heights) {
     return answer;
 }
 ```
+
+# 4. 다리를 지나는 트럭
+
+```java
+public int solution(int bridge_length, int weight, int[] truck_weights) {
+    int answer = 1;
+    Queue<Integer[]> truck = new LinkedList<Integer[]>();
+    Queue<Integer[]> progress = new LinkedList<Integer[]>();
+
+    for (int i = 0; i < truck_weights.length; i ++ ) {
+        truck.offer(new Integer[] {1, truck_weights[i]});
+    }
+
+    Integer[] y = truck.poll();
+    progress.offer(y);
+
+    int sum = y[1];
+    while(!progress.isEmpty()) {
+        answer++;
+
+        progress.stream().forEach(x -> x[0] = ++x[0]);
+
+        while(!progress.isEmpty() && progress.peek()[0] > bridge_length) {
+            sum -= progress.poll()[1];
+        }
+
+        if (!truck.isEmpty() && sum + truck.peek()[1] <= weight) {
+            Integer[] x = truck.poll();
+            progress.offer(x);
+            sum += x[1];
+        }
+    }
+
+    return answer;
+}
+```
