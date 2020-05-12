@@ -57,6 +57,64 @@ public class k번째수 {
  
 ```   
 
+```java
+import java.util.Arrays;
+
+public class k번째수_quick {
+
+    static void swap (int[] arr, int idx1, int idx2) {
+        int temp = arr[idx1];
+        arr[idx1] = arr[idx2];
+        arr[idx2] = temp;
+    }
+
+    static void quickSort(int[] arr, int left, int right) {
+        int pl = left;
+        int pr = right;
+        int x = arr[(pl+pr)/2];
+
+        do {
+            while (arr[pl] < x) pl++;
+            while (arr[pr] > x) pr--;
+            if(pl <= pr) {
+                swap(arr, pl++, pr--);
+            }
+        }while (pl <= pr);
+        if(left < pr) quickSort(arr, left, pr);
+        if(pl < right) quickSort(arr, pl, right);
+
+    }
+
+    static int commandsTask(int[] arr, int start, int end, int k) {
+        int[] result = new int[(end-start)+1];
+        int index = 0;
+        for(int i = start-1; i<end; i++) {
+            result[index] = arr[i];
+            index++;
+        }
+
+        quickSort(result, 0, result.length-1); // sort
+        return result[k-1];
+    }
+
+    static int[] solution(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+        for(int i = 0; i<commands.length; i++){
+            answer[i] = commandsTask(array, commands[i][0], commands[i][1], commands[i][2]);
+        }
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int[] array = new int[] {1,5,2,6,3,7,4};
+        int[][] commands = new int[][] {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
+        int[] values = solution(array, commands);
+        System.out.println(Arrays.toString(values));
+    }
+}
+```
+
+
 ### [프로그래머스(정렬)  가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42746) 
 
 ```java
@@ -115,4 +173,53 @@ public class k번째수 {
             }
         }
     }
+``` 
+
+### [프로그래머스(정렬)  H-INDEX](https://programmers.co.kr/learn/courses/30/lessons/42747) 
+```java
+public class hIndex_quick {
+    static void swap (int[] a, int idx1, int idx2) {
+        int t = a[idx1];
+        a[idx1] = a[idx2];
+        a[idx2] = t;
+    }
+
+    static void quickSort(int[] a, int left, int right) {
+        int pl = left;
+        int pr = right;
+        int x = a[(pl + pr) / 2];
+
+        do {
+            while (a[pl] < x) pl++;
+            while (a[pr] > x) pr--;
+            if(pl <= pr) {
+                swap(a, pl++, pr--);
+            }
+        }while (pl <= pr);
+        if(left < pr) quickSort(a, left, pr);
+        if(pl < right) quickSort(a, pl, right);
+
+    }
+
+    public static int solution(int[] citations) {
+        int answer = 0;
+        int k = 0;
+
+        quickSort(citations, 0, citations.length-1);
+
+        for (int i = 0; i < citations.length; i++) {
+            k =  citations.length - i;
+            if (k <= citations[i]) {
+                answer = k;
+                break;
+            }
+        }
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{3, 0, 6, 1, 5};
+        System.out.println(solution(arr));
+    }
+}
 ```
